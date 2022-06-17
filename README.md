@@ -1,5 +1,7 @@
 # prefect-postgres
 
+See https://github.com/PrefectHQ/prefect-sqlalchemy instead.
+
 ## Welcome!
 
 Prefect integrations for interacting with prefect-postgres.
