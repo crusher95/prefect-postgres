@@ -1,2 +1,2 @@
-prefect>=2.0a13
+prefect>=2.6
 psycopg2>=2.9.3
