@@ -8,7 +8,7 @@
       "github_organization": "PrefectHQ",
       "collection_name": "prefect-postgres",
       "collection_slug": "prefect_postgres",
-      "collection_short_description": "Collection of Prefect integrations for working with PostgreSQL ddatabases.",
+      "collection_short_description": "Collection of Prefect integrations for working with PostgreSQL databases.",
       "_copy_without_render": [
         ".github/workflows/*.yml"
       ],
