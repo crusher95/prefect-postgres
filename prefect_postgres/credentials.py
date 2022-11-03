@@ -1,11 +1,11 @@
+"""
+Module containing functionality for authenticating with PostgreSQL databases
+"""
 import psycopg
 from typing import Any, Dict, Optional, Union
 from pydantic import SecretStr
 from prefect.blocks.core import Block
 from psycopg import connect
-"""
-Module containing functionality for authenticating with PostgreSQL databases
-"""
 
 
 class PostgresDatabaseCredentials(Block):
