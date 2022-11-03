@@ -10,7 +10,7 @@ from psycopg import connect
 
 class PostgresDatabaseCredentials(Block):
     """
-    Block used to manage authentication with a database.
+    Block used to manage authentication with a PostgreSQL database.
     Attributes:
         database: The name of the database to use.
         username: The user name used to authenticate.
