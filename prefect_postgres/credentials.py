@@ -8,7 +8,7 @@ Module containing functionality for authenticating with PostgreSQL databases
 """
 
 
-class DatabaseCredentials(Block):
+class PostgresDatabaseCredentials(Block):
     """
     Block used to manage authentication with a database.
     Attributes:
