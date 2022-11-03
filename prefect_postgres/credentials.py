@@ -63,7 +63,7 @@ class PostgresDatabaseCredentials(Block):
             postgres_credentials_flow()
             ```
         """
-        return psycopg.connect(
+        return psycopg.AsyncConnection.connect(
             database=self.database,
             user=self.username,
             password=self.password,
