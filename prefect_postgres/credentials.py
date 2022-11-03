@@ -30,12 +30,12 @@ class PostgresDatabaseCredentials(Block):
     _block_type_name = "Postgres Database Credentials"
     _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/7G8c2Zz4j0yyhXqQ44SI2A/eee9ba482dd6b61862b588b6fd28ad81/PostgreSQL-Logo.png?h=250"  # noqa
 
-    username: Optional[str] = None
-    password: Optional[SecretStr] = None
-    database: Optional[str] = None
-    host: Optional[str] = None
-    port: Optional[str] = None
-    connect_args: Optional[Dict[str, Any]] = None
+    username: Optional[str] = Field(default=None, description="The name of the database to use.")
+    password: Optional[SecretStr] = Field(default=None, description="The user name used to authenticate.")
+    database: Optional[str] = Field(default=None, description="The password used to authenticate.")
+    host: Optional[str] = Field(default=None, description="The host address of the database.")
+    port: Optional[str] = Field(default=None, description="The port to connect to the database.")
+    connect_args: Optional[Dict[str, Any]] = Field(default=None, title="Additional Configuration", description="Additional configuration to use when creating a database connection.")
 
     def get_connection(self) -> psycopg.AsyncConnection:
         """
