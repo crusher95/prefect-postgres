@@ -18,7 +18,7 @@ class PostgresDatabaseCredentials(Block):
         host: The host address of the database.
         port: The port to connect to the database.
         connect_args: The options which will be passed directly to the
-            DBAPI's connect() method as additional keyword arguments.
+           psycopg connect() method as additional keyword arguments.
     Example:
         Load stored database credentials:
         ```python
