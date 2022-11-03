@@ -27,7 +27,7 @@ class DatabaseCredentials(Block):
         ```
     """
 
-    _block_type_name = "Database Credentials"
+    _block_type_name = "Postgres Database Credentials"
     _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/7G8c2Zz4j0yyhXqQ44SI2A/eee9ba482dd6b61862b588b6fd28ad81/PostgreSQL-Logo.png?h=250"  # noqa
 
     username: Optional[str] = None
