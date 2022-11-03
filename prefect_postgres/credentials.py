@@ -59,12 +59,7 @@ class PostgresDatabaseCredentials(Block):
                 )
                 conn = postgres_credentials.get_connection()
                 with conn.cursor() as cur:
-                    cur.execute("
-                        CREATE TABLE test (
-                            id serial PRIMARY KEY,
-                            num integer,
-                            data text)
-                        ")
+                    cur.execute("CREATE TABLE test (id serial PRIMARY KEY,num integer,data text)")
             postgres_credentials_flow()
             ```
         """
