@@ -37,7 +37,7 @@ class PostgresDatabaseCredentials(Block):
     port: Optional[str] = None
     connect_args: Optional[Dict[str, Any]] = None
 
-    def get_connection(self) -> connect:
+    def get_connection(self) -> psycopg.AsyncConnection:
         """
         Returns an authenticated connection object that can be
         used to query from databases.
