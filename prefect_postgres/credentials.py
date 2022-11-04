@@ -1,11 +1,11 @@
 """
 Module containing functionality for authenticating with PostgreSQL databases
 """
+from typing import Any, Dict
+
 import psycopg
-from typing import Any, Dict, Optional, Union
-from pydantic import SecretStr
 from prefect.blocks.core import Block
-from psycopg import connect
+from pydantic import Field, SecretStr
 
 
 class PostgresDatabaseCredentials(Block):
@@ -31,11 +31,18 @@ class PostgresDatabaseCredentials(Block):
     _logo_url = "https://images.ctfassets.net/gm98wzqotmnx/7G8c2Zz4j0yyhXqQ44SI2A/eee9ba482dd6b61862b588b6fd28ad81/PostgreSQL-Logo.png?h=250"  # noqa
 
     username: str = Field(default=None, description="The name of the database to use.")
-    password: SecretStr = Field(default=None, description="The user name used to authenticate.")
+    password: SecretStr = Field(
+        default=None, description="The user name used to authenticate."
+    )
     database: str = Field(default=..., description="The password used to authenticate.")
     host: str = Field(default=..., description="The host address of the database.")
     port: str = Field(default=..., description="The port to connect to the database.")
-    connect_args: Dict[str, Any] = Field(default_factory=dict, title="Additional Configuration", description="Additional configuration to use when creating a database connection.")
+    connect_args: Dict[str, Any] = Field(
+        default_factory=dict,
+        title="Additional Configuration",
+        description="Additional configuration to use when creating a "
+        "database connection.",
+    )
 
     def get_connection(self) -> psycopg.AsyncConnection:
         """
@@ -59,7 +66,8 @@ class PostgresDatabaseCredentials(Block):
                 )
                 conn = postgres_credentials.get_connection()
                 with conn.cursor() as cur:
-                    cur.execute("CREATE TABLE test (id serial PRIMARY KEY,num integer,data text)")
+                    cur.execute("CREATE TABLE test
+                    (id serial PRIMARY KEY,num integer,data text)")
             postgres_credentials_flow()
             ```
         """
